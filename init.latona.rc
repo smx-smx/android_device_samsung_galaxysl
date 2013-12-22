@@ -1,6 +1,6 @@
 import init.latona.usb.rc
 
-on early-init
+on init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
     export DOWNLOAD_CACHE /data/download
@@ -31,6 +31,7 @@ on fs
 
     mount yaffs2 mtd@efs /efs
     mount yaffs2 mtd@radio /radio
+    mount yaffs2 mtd@system /system
 
     mount_all fstab.latona
 
